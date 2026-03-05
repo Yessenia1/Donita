@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Feliz Cumpleaños</title>
+
+</head>
+
+<body>
+
+    <div id="sec1" class="section">
+        <div class="frame-container-premium">
+            <div class="frame-side-v side-left"></div>
+            <div class="frame-side-v side-right"></div>
+
+            <div class="danita-card-content">
+                <div class="photo-grid-scrapbook">
+                    <div class="photo-item photo-tl">
+                        <img src="descarga (10).jpg" alt="">
+                    </div>
+                    <div class="photo-item photo-tr">
+                        <img src="descarga (11).jpg" alt="">
+                    </div>
+                    <div class="photo-item photo-bl">
+                        <img src="descarga (12).jpg" alt="">
+                    </div>
+                    <div class="photo-item photo-br">
+                        <img src="descarga (13).jpg" alt="">
+                    </div>
+                    <div class="photo-item photo-center">
+                        <img src="snopy.png" alt="">
+                    </div>
+                </div>
+
+                <div class="text-cluster-premium">
+                    <span class="edition-label">EDICIÓN ESPECIAL 21 AÑOS</span>
+
+                    <h1 class="calligraphy-headline">¡HAPPY BIRTHDAY!</h1>
+
+                    <p class="premium-dedication-text">
+                        ...haciendo el mundo más bonito con tu sonrisa, iluminando cada rincón y llenando de alegría.
+                    </p>
+
+                    <button class="btn-action-premium" onclick="goToSection(2)">
+                        Entrar al mundo de Danita
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sec2" class="section hidden">
+        <div class="book-wrapper">
+            <div class="book" id="myBook">
+                <!-- Página 1: Tapa y Reverso de Tapa -->
+                <div class="page" id="p1" style="z-index: 3;" onclick="flipPage(1)">
+                    <div class="front book-cover">
+                        <h2 class="book-title calligraphy-headline">Nuestro Álbum</h2>
+                        <p class="book-subtitle">Toca para abrir</p>
+                    </div>
+                    <div class="back book-page-left">
+                        <div class="photo-collage photo-collage-3">
+                            <div class="book-photo-frame" style="transform: rotate(-8deg);">
+                                <img src="WhatsApp Image 2026-03-03 at 4.13.24 PM.jpeg" alt="">
+                            </div>
+                            <div class="book-photo-frame" style="transform: rotate(5deg);">
+                                <img src="WhatsApp Image 2026-03-03 at 5.13.18 PM.jpeg" alt="">
+                            </div>
+                            <div class="book-photo-frame" style="transform: rotate(-3deg);">
+                                <img src="WhatsApp Image 2026-03-03 at 5.13.19 PM.jpeg" alt="">
+                            </div>
+                        </div>
+                        <h3 class="book-heading">Nuestra Historia</h3>
+                        <p class="book-text">Cada momento juntos ha sido como un pedacito de magia capturado en el
+                            tiempo.</p>
+                    </div>
+                </div>
+
+                <!-- Página 2: Página Interna 1 y Reverso 1 -->
+                <div class="page" id="p2" style="z-index: 2;" onclick="flipPage(2)">
+                    <div class="front book-page-right" style="padding: 15px 20px;">
+                        <h3 class="book-heading" style="margin-bottom: 8px;">Para Danita</h3>
+                        <div class="two-column-text">
+                            <p>
+                                Veintiuno que han construido a la persona más genuina que conozco. Veintiuno llenos de
+                                risas que no te aguantabas, de llantos que valieron la pena, de canciones a todo
+                                volumen, de madrugadas estudiando con el corazón a mil.
+                            </p>
+
+                            <p>
+                                Deseo de todo corazón que estos 21 años te traigan la paz que a veces el estudio nos
+                                quita, y la alegría de saber que vas por el camino correcto. Que nunca te falten motivos
+                                para sonreír de esa forma tan tuya y que cada paso que des te acerque más a la mujer
+                                increíble que sueñas ser. Te deseo un año lleno de momentos que te quiten el aliento, de
+                                metas cumplidas y de esa felicidad que se siente en el pecho.</p>
+
+                            <p>
+                                Estoy orgullosa de ti. No por tus logros solos, sino por la persona en la que te estás
+                                convirtiendo.
+                            </p>
+                            <p>
+                                Y que siempre sepas que tienes a alguien que te quiere incondicionalmente.
+
+
+                                Te prometo estar ahí. En los exámenes más difíciles, en los días que todo falle, y en
+                                los días que todo brille. Siempre.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="back book-page-left">
+                        <div class="photo-collage photo-collage-6">
+                            <div class="book-photo-frame" style="transform: rotate(4deg);">
+                                <img src="re.jpeg" alt="">
+                            </div>
+                            <div class="book-photo-frame" style="transform: rotate(-6deg);">
+                                <img src="ri.jpeg" alt="">
+                            </div>
+                            <div class="book-photo-frame" style="transform: rotate(5deg);">
+                                <img src="ro.jpeg" alt="">
+                            </div>
+
+                        </div>
+                        <h3 class="book-heading">21 Años de Magia</h3>
+                        <p class="book-text">Brindemos por todo lo que has logrado y por los hermosos años que vienen.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Página 3: Página Interna 2 y Contraportada -->
+                <div class="page" id="p3" style="z-index: 1;">
+                    <div class="front book-page-right" onclick="flipPage(3)">
+                        <h3 class="calligraphy-headline" style="margin: 0;">¡Disfruta!</h3>
+                        <p class="book-text" style="margin-top: 20px;">Continúa pasando a la última página...</p>
+                    </div>
+                    <div class="back book-back-cover" onclick="if(event.target.tagName !== 'BUTTON') flipPage(3)"
+                        style="cursor: pointer;">
+                        <h2 class="calligraphy-headline" style="color: white;">¡Felicidades!</h2>
+
+                        <button class="btn-action-premium btn-on-dark" onclick="goToSection(3)">Ver más</button>
+                        <p style="font-size: 0.7em; color: rgba(255,255,255,0.7); margin-top: 15px;">(Toca el fondo para
+                            retroceder)</p>
+                    </div>
+                </div>
+            </div>
+            <p style="color: #888; font-size: 0.9em;">(Toca las páginas para pasarlas)</p>
+        </div>
+    </div>
+
+    <div id="sec3" class="section hidden" style="flex-direction: column;">
+        <!-- Reproductor tipo iPod -->
+        <div class="ipod-container">
+            <!-- Pantalla del iPod -->
+            <div class="ipod-screen">
+                <img id="ipod-cover"
+                    src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=300&auto=format&fit=crop"
+                    alt="Album Cover">
+                <div class="ipod-info">
+                    <h4 id="ipod-title">Cargando...</h4>
+                    <p id="ipod-artist">Espera un momento</p>
+                </div>
+                <!-- Menú de lista de canciones (Oculto por defecto) -->
+                <div id="ipod-menu" class="ipod-menu hidden">
+                    <h4 class="menu-title">Playlist</h4>
+                    <ul id="ipod-playlist"></ul>
+                </div>
+            </div>
+
+            <!-- Barra de Volumen MP3 -->
+            <div class="volume-container">
+                <span class="vol-icon" onclick="changeVolume(0)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                        <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                    </svg>
+                </span>
+                <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" value="0.5"
+                    oninput="changeVolume(this.value)">
+                <span class="vol-icon" onclick="changeVolume(1)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"></polygon>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                </span>
+            </div>
+
+            <!-- Rueda de control (Click Wheel) -->
+            <div class="ipod-wheel">
+                <span class="wheel-btn top" onclick="toggleMenu()">MENU</span>
+                <span class="wheel-btn left" onclick="prevSong()">⏮</span>
+                <span class="wheel-btn right" onclick="nextSong()">⏭</span>
+                <span class="wheel-btn bottom" onclick="togglePlay()">⏯</span>
+                <div class="wheel-center" id="wheel-center-btn" onclick="togglePlay()">Play</div>
+            </div>
+        </div>
+
+        <!-- Caja de carta/mensaje debajo del iPod -->
+        <div class="ipod-message-box">
+            <p id="ipod-message">♪ Dale play para escuchar la primera canción...</p>
+        </div>
+
+        <!-- Audio oculto -->
+        <audio id="musica">
+            <source id="musica-source" src="" type="audio/mpeg">
+        </audio>
+        <div id="balloon-box"></div>
+    </div>
+
+    <div class="nav-dots">
+        <button class="nav-arrow" onclick="navStep(-1)">&lt;</button>
+        <div class="dot active" id="dot1" onclick="goToSection(1)"></div>
+        <div class="dot" id="dot2" onclick="goToSection(2)"></div>
+        <div class="dot" id="dot3" onclick="goToSection(3)"></div>
+        <button class="nav-arrow" onclick="navStep(1)">&gt;</button>
+    </div>
+
+
+</body>
+
+</html>

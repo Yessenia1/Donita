@@ -1,0 +1,1372 @@
+/* IMPORTAR FUENTES (Debe estar al inicio de todo el CSS) */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap');
+/* Caligrafía de Birthday */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+/* Texto principal */
+
+:root {
+    --primary: #8b6d4b;
+    /* Dorado envejecido / bronce */
+    --accent: #5c2020;
+    /* Borgoña / Sangre de toro */
+    --bg-page: #1a1614;
+    /* Negro madera oscura */
+    --bg-card: #f2ebd9;
+    /* Color pergamino/papel viejo */
+    --text-dark: #2c1e16;
+    /* Marrón muy oscuro para texto */
+    --text-light: #5c4a3d;
+    /* Marrón medio */
+
+    /* Dimensiones estándar del libro */
+    --book-w: 300px;
+    --book-h: 400px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    /* Tipografía más moderna y limpia */
+    background-color: var(--bg-page);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    /* IMPORTANTE: Previene el scroll horizontal en móviles */
+    width: 100vw;
+}
+
+.main-screen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Ocupa todo el alto de la pantalla */
+    position: relative;
+    padding: 20px;
+    /* Margen mínimo */
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* SECCIONES */
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    /* Asegura que tome toda la pantalla para centrar */
+    padding: 60px 20px;
+    /* Margen arriba y abajo para que no se pegue */
+    box-sizing: border-box;
+}
+
+.danita-world-card {
+    background-color: var(--bg-card);
+    width: 90%;
+    /* Ancho responsive */
+    max-width: 480px;
+    /* Ancho máximo para que se vea cuadrada en desktop */
+    aspect-ratio: 1 / 1;
+    /* Intenta mantenerla CUADRADA */
+    padding: 25px;
+    border-radius: 40px;
+    /* Bordes suaves */
+    position: relative;
+    box-shadow: 0 10px 30px rgba(255, 143, 163, 0.2);
+
+    /* EL BORDE ONDEADO ESTILO image_1.png */
+    /* Usamos un outline para que no altere el padding */
+    outline: 10px double var(--primary);
+    /* Doble línea rosa */
+    outline-offset: -12px;
+    /* Metemos el borde hacia adentro */
+    /* Opcional: Para que las esquinas del outline también se redondeen,
+       depende del navegador. Una alternativa es un seudo-elemento con border-image */
+}
+
+.photo-grid-scrapbook {
+    position: relative;
+    width: 100%;
+    height: 130px;
+    /* Altura del área de fotos reducida */
+    margin-bottom: 20px;
+}
+
+.photo-item {
+    background: #fdfdfd;
+    border: 3px solid white;
+    /* Efecto Polaroid */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Esquinas pequeñas */
+.photo-tl {
+    width: 45px;
+    height: 45px;
+    top: 0;
+    left: 0;
+    transform: rotate(-8deg);
+}
+
+.photo-tr {
+    width: 45px;
+    height: 45px;
+    top: 0;
+    right: 0;
+    transform: rotate(10deg);
+}
+
+.photo-bl {
+    width: 45px;
+    height: 45px;
+    bottom: 0;
+    left: 0;
+    transform: rotate(-5deg);
+}
+
+.photo-br {
+    width: 45px;
+    height: 45px;
+    bottom: 0;
+    right: 0;
+    transform: rotate(5deg);
+}
+
+.photo-center {
+    width: 85px;
+    height: 110px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    border-radius: 12px;
+}
+
+.card-text-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edition-label {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    /* Muy pequeño */
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.intro-headline {
+    font-size: 12px;
+    /* Pequeño y delicado */
+    color: var(--text-light);
+    line-height: 1.4;
+    font-weight: 400;
+    margin: 0 0 10px 0;
+    width: 90%;
+}
+
+:root {
+    --primary-premium: #8b6d4b;
+    /* Bronce para el marco decorativo */
+    --calligraphy-color: #5c2020;
+    /* Granate profundo */
+    --text-color: #3b2f2f;
+}
+
+/* CONTENEDOR PRINCIPAL CON EL MARCO ONDULADO */
+.frame-container-premium {
+    width: 90%;
+    max-width: 360px;
+    /* Reducido de 450 - Evita solapamiento */
+    position: relative;
+    background: var(--bg-card);
+    /* Ajustado a papel pergamino */
+    border-radius: 20px;
+    padding: 15px;
+    /* Espacio para que el marco respire */
+    box-shadow: 0 10px 30px rgba(26, 22, 20, 0.2);
+}
+
+.danita-card-content {
+    position: relative;
+    padding: 20px 15px;
+    /* Menor padding interno */
+    text-align: center;
+    border: 1px solid #fdf2f4;
+    /* Un borde interno muy tenue */
+}
+
+/* --- INTEGRACIÓN DEL MARCO ONDULADO (SVG) --- */
+/* Bordes Superior e Inferior */
+.danita-card-content::before,
+.danita-card-content::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 16px;
+    background-size: 40px 16px;
+    background-repeat: repeat-x;
+    /* Cambiado color del SVG a bronce: %238b6d4b */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='16'%3E%3Cpath d='M0 5 C5 0, 10 0, 20 5 S35 10, 40 5' fill='none' stroke='%238b6d4b' stroke-width='1.5'/%3E%3Cpath d='M0 11 C5 6, 10 6, 20 11 S35 16, 40 11' fill='none' stroke='%238b6d4b' stroke-width='1.5'/%3E%3C/svg%3E");
+    z-index: 10;
+}
+
+.danita-card-content::before {
+    top: 0;
+}
+
+.danita-card-content::after {
+    bottom: 0;
+}
+
+/* Bordes Laterales */
+.frame-side-v {
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    width: 18px;
+    background-size: 18px 40px;
+    background-repeat: repeat-y;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='40'%3E%3Cpath d='M5 0 C1 5, 1 10, 5 20 S9 35, 5 40' fill='none' stroke='%238b6d4b' stroke-width='1.5'/%3E%3Cpath d='M11 0 C7 5, 7 10, 11 20 S15 35, 11 40' fill='none' stroke='%238b6d4b' stroke-width='1.5'/%3E%3C/svg%3E");
+    z-index: 10;
+}
+
+.side-left {
+    left: 10px;
+}
+
+.side-right {
+    right: 10px;
+}
+
+/* --- NUEVO ESTILO CALIGRÁFICO (REEMPLAZO PEDIDO) --- */
+.calligraphy-headline {
+    font-family: 'Dancing Script', cursive;
+    /* Simula el estilo de 'Birthday' */
+    font-size: 2.8rem;
+    /* Tamaño reducido */
+    color: var(--accent);
+    /* Rosa fuerte del resto del diseño */
+    font-weight: 700;
+    /* Las fuentes cursivas no suelen necesitar negrita */
+    margin: 10px 0 15px 0;
+    line-height: 1.1;
+}
+
+/* REAJUSTE DE TEXTOS PARA NO SER INVASIVOS */
+.text-cluster-premium {
+    text-align: center;
+    max-width: 270px;
+    margin: 0 auto;
+}
+
+.premium-dedication-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.edition-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: var(--primary-premium);
+    background-color: transparent;
+    /* Limpia el fondo rosa base */
+    border: 1px solid var(--primary-premium);
+    padding: 3px 12px;
+    border-radius: 12px;
+}
+
+.btn-action-premium {
+    background-color: var(--accent);
+    color: #f2ebd9;
+    border: 1px solid #752828;
+    padding: 8px 16px;
+    /* Reducido para que ocupe menos espacio */
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.7rem;
+    /* Letra más pequeña */
+    box-shadow: 0 5px 15px rgba(26, 22, 20, 0.4);
+    display: inline-block;
+    margin: 5px auto;
+}
+
+.main-congratulation {
+    font-size: 20px;
+    /* Destacado pero no invasivo */
+    color: var(--accent);
+    margin: 5px 0 15px 0;
+    font-weight: 700;
+}
+
+.dedication-text {
+    font-size: 11px;
+    /* Pequeño */
+    color: var(--text-light);
+    line-height: 1.5;
+    font-style: italic;
+    font-weight: 300;
+    margin: 0 0 25px 0;
+    width: 85%;
+}
+
+/* 5. BOTÓN REAJUSTADO (PEQUEÑO) */
+.btn-action.btn-small {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    /* Menos padding */
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    /* Fuente más pequeña */
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(26, 22, 20, 0.4);
+}
+
+.btn-action.btn-small:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(26, 22, 20, 0.6);
+}
+
+
+.global-nav {
+    position: absolute;
+    bottom: 30px;
+    /* Siempre a 30px del borde inferior de la pantalla */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px 20px;
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: var(--primary);
+    transform: scale(1.3);
+}
+
+.nav-arrow {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* CONTENEDOR DEL MARCO (MÉTODO 5 ADAPTADO) */
+.frame-container {
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    /* Bordes suaves en las esquinas */
+    padding: 15px;
+    /* Espacio para que el marco respire */
+    box-shadow: 0 10px 30px rgba(255, 143, 163, 0.15);
+}
+
+.danita-card-inner {
+    position: relative;
+    padding: 30px 20px;
+    text-align: center;
+    border: 1px solid #fdf2f4;
+    /* Un borde interno muy tenue */
+}
+
+/* Bordes Superior e Inferior (Pseudo-elementos) */
+.danita-card-inner::before,
+.danita-card-inner::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 16px;
+    background-size: 40px 16px;
+    background-repeat: repeat-x;
+    /* Usamos tu SVG pero con color Rosa (#ff8fa3 -> %23ff8fa3) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='16'%3E%3Cpath d='M0 5 C5 0, 10 0, 20 5 S35 10, 40 5' fill='none' stroke='%23ff8fa3' stroke-width='1.5'/%3E%3Cpath d='M0 11 C5 6, 10 6, 20 11 S35 16, 40 11' fill='none' stroke='%23ff8fa3' stroke-width='1.5'/%3E%3C/svg%3E");
+    z-index: 10;
+}
+
+.danita-card-inner::before {
+    top: 0;
+}
+
+.danita-card-inner::after {
+    bottom: 0;
+}
+
+/* Bordes Laterales */
+.frame-side {
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    width: 18px;
+    background-size: 18px 40px;
+    background-repeat: repeat-y;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='40'%3E%3Cpath d='M5 0 C1 5, 1 10, 5 20 S9 35, 5 40' fill='none' stroke='%23ff8fa3' stroke-width='1.5'/%3E%3Cpath d='M11 0 C7 5, 7 10, 11 20 S15 35, 11 40' fill='none' stroke='%23ff8fa3' stroke-width='1.5'/%3E%3C/svg%3E");
+    z-index: 10;
+}
+
+.side-left {
+    left: 10px;
+}
+
+.side-right {
+    right: 10px;
+}
+
+/* REAJUSTE DE TEXTOS PARA QUE NO SE VEA INVASIVO */
+.main-congratulation {
+    font-size: 1.4rem;
+    color: #ff4d6d;
+    font-family: 'Playfair Display', serif;
+    /* Para el toque elegante */
+    margin: 10px 0;
+}
+
+.intro-headline,
+.dedication-text {
+    font-size: 0.8rem;
+    color: #777;
+    max-width: 280px;
+    margin: 0 auto 15px;
+}
+
+.edition-label {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 2px 10px;
+    border-radius: 4px;
+}
+
+/* LIBRO 3D */
+.book-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.book {
+    width: var(--book-w, 300px);
+    height: var(--book-h, 400px);
+    position: relative;
+    perspective: 1500px;
+    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.book.open {
+    transform: translateX(50%);
+    /* Traslada el libro a la derecha para que el conjunto abierto quede centrado */
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Base states for pages */
+.front {
+    border-radius: 0 15px 15px 0;
+    transform: translateZ(1px);
+    /* Soluciona parpadeos en 3D (Z-fighting) */
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(1px);
+    /* Asegura de que haya espacio entre caras */
+    border-radius: 15px 0 0 15px;
+}
+
+/* Specific page designs */
+.book-cover {
+    background: radial-gradient(circle at center, #632e2e 0%, #3a1c1a 100%);
+    /* Textura de cuero más rica centrado */
+    border: 1px solid #201010;
+    box-shadow: inset -5px 0 20px rgba(0, 0, 0, 0.7), 5px 5px 15px rgba(26, 22, 20, 0.6);
+    color: #f2ebd9;
+    position: relative;
+}
+
+.book-cover::after,
+.book-back-cover::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    border: 2px solid var(--primary);
+    /* Dorado viejo / bronce */
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.book-cover::before,
+.book-back-cover::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    border: 1px solid rgba(139, 109, 75, 0.5);
+    /* Línea más fina adentro */
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.book-page-right {
+    background: #f4efeb;
+    /* Pergamino */
+    border: 1px solid #d4c3af;
+    box-shadow: inset -5px 0 15px rgba(0, 0, 0, 0.05);
+    border-left: 1px solid #bda28f;
+}
+
+.book-page-left {
+    background: #f4efeb;
+    border: 1px solid #d4c3af;
+    box-shadow: inset 10px 0 15px rgba(0, 0, 0, 0.05);
+    border-right: 1px solid #bda28f;
+}
+
+.book-back-cover {
+    background: radial-gradient(circle at center, #3a1c1a 0%, #632e2e 100%);
+    border: 1px solid #201010;
+    box-shadow: inset 10px 0 20px rgba(0, 0, 0, 0.6);
+    position: relative;
+}
+
+.flipped {
+    transform: rotateY(-180deg);
+}
+
+/* Contenido del libro */
+.book-title {
+    color: #f2ebd9 !important;
+    /* Pergamino */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5px;
+    z-index: 1;
+    /* Para estar encima del borde */
+}
+
+.book-subtitle {
+    font-size: 0.9rem;
+    color: #d4c3af;
+    font-weight: 300;
+    z-index: 1;
+}
+
+.book-cover .book-subtitle {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-top: 15px;
+}
+
+/* Photo Collages */
+.photo-collage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.book-photo-frame {
+    background: #fdfdfd;
+    border: 6px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* IMPORTANTE: Para que la imagen no se salga del marco */
+}
+
+.book-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Para rellenar el marco igual que en Instagram */
+}
+
+/* Layout para 3 fotos */
+.photo-collage-3 .book-photo-frame {
+    width: 60px;
+    height: 60px;
+    border-width: 4px;
+}
+
+.photo-collage-3 .photo-emoji {
+    font-size: 1.5rem;
+}
+
+/* Layout para 6 fotos */
+.photo-collage-6 {
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.photo-collage-6 .book-photo-frame {
+    width: 50px;
+    height: 50px;
+    border-width: 3px;
+    border-radius: 5px;
+}
+
+.photo-collage-6 .photo-emoji {
+    font-size: 1.2rem;
+}
+
+.photo-emoji {
+    opacity: 0.6;
+}
+
+.book-heading {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.book-text {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Texto largo a dos columnas (Sección Para Danita) */
+.two-column-text {
+    column-count: 2;
+    column-gap: 15px;
+    font-size: 0.5rem;
+    /* Letra muy pequeñita, ideal para 1200+ caracteres */
+    line-height: 1.5;
+    text-align: justify;
+    color: var(--text-dark);
+    height: 80%;
+    /* Deja espacio para el título */
+    overflow-y: auto;
+    /* Scroll si se pasa de límite */
+    padding-right: 5px;
+}
+
+.two-column-text p {
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-indent: 10px;
+    /* Sangría clásica de libro */
+}
+
+/* Scrollbar personalizado delgado para el texto largo */
+.two-column-text::-webkit-scrollbar {
+    width: 2px;
+}
+
+.two-column-text::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.two-column-text::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 2px;
+}
+
+.btn-on-dark {
+    background: white !important;
+    color: var(--accent) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* MENÚ INFERIOR < . . . > */
+.nav-dots {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    /* Centra los puntitos a la mitad de la pantalla */
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(242, 235, 217, 0.9);
+    /* Parchment semitransparente */
+    padding: 10px 25px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(26, 22, 20, 0.4);
+    z-index: 100;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: var(--primary);
+    transform: scale(1.4);
+}
+
+.nav-arrow {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+/* BOTONES */
+.btn-action {
+    background: var(--primary);
+    color: #f2ebd9;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(26, 22, 20, 0.4);
+    transition: 0.3s;
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+}
+
+/* GLOBOS */
+.balloon {
+    position: absolute;
+    bottom: -50px;
+    animation: flyUp 5s linear forwards;
+    font-size: 30px;
+}
+
+@keyframes flyUp {
+    to {
+        transform: translateY(-110vh) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+/* =========================================
+   REPRODUCTOR IPOD (Sección 3)
+   ========================================= */
+.ipod-container {
+    background: linear-gradient(145deg, #3b2f2f, #221a16);
+    /* Tonos oscuros estilo madera o piel */
+    width: 280px;
+    height: 440px;
+    border-radius: 15px;
+    /* Menos redondo */
+    box-shadow:
+        inset 2px 2px 5px rgba(255, 255, 255, 0.1),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.6),
+        0 15px 35px rgba(26, 22, 20, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+    border: 2px solid #4a3b32;
+}
+
+/* Pantalla del iPod */
+.ipod-screen {
+    background: #111;
+    /* Pantalla apagada/oscura */
+    width: 230px;
+    height: 180px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 4px solid #fffdfd;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.ipod-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    /* Un poco oscuro para que el texto resalte */
+    transition: opacity 0.3s;
+}
+
+.ipod-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    padding: 15px 10px 10px;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+}
+
+.ipod-info h4 {
+    margin: 0 0 3px 0;
+    font-size: 1rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ipod-info p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #ffdce3;
+}
+
+/* =========================================
+   MENÚ DEL IPOD (Lista de Canciones)
+   ========================================= */
+.ipod-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fdfdfd;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.ipod-menu.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menu-title {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.85rem;
+    margin: 0;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+#ipod-playlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+#ipod-playlist::-webkit-scrollbar {
+    width: 6px;
+}
+
+#ipod-playlist::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+#ipod-playlist li {
+    padding: 10px 15px;
+    font-size: 0.7rem;
+    border-bottom: 1px solid #eee;
+    color: var(--text-dark);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#ipod-playlist li:hover,
+#ipod-playlist li.active {
+    background: var(--accent);
+    color: white;
+}
+
+/* =========================================
+   BARRA DE VOLUMEN MP3
+   ========================================= */
+.volume-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    width: 80%;
+    color: var(--text-light);
+}
+
+.vol-icon {
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vol-icon:active {
+    transform: scale(0.8);
+}
+
+.volume-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    background: #d4c3af;
+    border-radius: 2px;
+    outline: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.volume-slider:hover {
+    opacity: 1;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Click Wheel (Rueda) */
+.ipod-wheel {
+    background: #fdfdfd;
+    /* Rueda blanca */
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    position: relative;
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.1),
+        inset 0 0 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wheel-center {
+    background: linear-gradient(145deg, #4a3b32, #2c1e16);
+    /* Botón central oscuro */
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    box-shadow:
+        inset 0 2px 5px rgba(255, 255, 255, 0.1),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.5),
+        0 2px 5px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.2s;
+
+    /* Centrado de texto interno */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.wheel-center:hover {
+    color: rgba(255, 255, 255, 0.85);
+    /* Se muestra el texto al pasar el ratón */
+    background: linear-gradient(145deg, #5a4b42, #3c2e26);
+    /* Ligeramente más claro */
+}
+
+.wheel-center:active {
+    transform: scale(0.95);
+}
+
+/* Botones de la rueda */
+.wheel-btn {
+    position: absolute;
+    color: #bda28f;
+    /* Dorado sutil */
+    font-weight: bold;
+    font-size: 0.8rem;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+}
+
+.wheel-btn:active {
+    opacity: 0.5;
+}
+
+.wheel-btn.top {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 1px;
+}
+
+.wheel-btn.bottom {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+}
+
+.wheel-btn.left {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+
+.wheel-btn.right {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+
+/* Caja de Mensaje Cursi */
+.ipod-message-box {
+    background: #f2ebd9;
+    /* Textura papel viejo */
+    width: 90%;
+    max-width: 380px;
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 8px;
+    /* Menos curvo */
+    box-shadow: 0 10px 25px rgba(26, 22, 20, 0.5);
+    /* Sombra oscura */
+    border-left: 5px solid var(--accent);
+    /* Borde rojo oscuro */
+    position: relative;
+    z-index: 10;
+}
+
+.ipod-message-box p {
+    margin: 0;
+    font-style: italic;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+    transition: opacity 0.3s;
+}
+
+/* Tarjeta con bordes ondeados (Efecto Wavy) */
+.special-card {
+    background: white;
+    width: 90%;
+    max-width: 450px;
+    padding: 20px;
+    position: relative;
+    border-radius: 50px;
+    /* Base redondeada */
+    box-shadow: 0 15px 40px rgba(255, 143, 163, 0.3);
+    /* El truco del borde ondeado visual con máscara */
+    outline: 8px double var(--primary);
+    outline-offset: -15px;
+}
+
+/* Rejilla de fotos */
+.photo-grid {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+.corner-photo,
+.center-photo {
+    background: #eee;
+    border: 3px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.corner-photo {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    z-index: 1;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    transform: rotate(-10deg);
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    transform: rotate(10deg);
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    transform: rotate(-5deg);
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    transform: rotate(5deg);
+}
+
+.center-photo {
+    width: 140px;
+    height: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    border-radius: 20px;
+}
+
+/* Estilo de Textos */
+.edition-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.card-content h1 {
+    font-size: 1.4em;
+    color: #444;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.main-wish {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--accent);
+    margin: 10px 0;
+}
+
+.sub-text {
+    font-style: italic;
+    color: #777;
+    font-size: 0.95em;
+    margin-bottom: 25px;
+}
+
+.main-entrance {
+    width: 100%;
+    font-size: 1.1em;
+    padding: 15px !important;
+}
+
+/* =========================================
+   MEDIA QUERIES PARA CELULAR (Responsive)
+   ========================================= */
+@media (max-width: 650px) {
+    :root {
+        /* Encoger un poco el libro para celulares y pantallas estrechas */
+        --book-w: 140px;
+        --book-h: 210px;
+    }
+
+    .frame-container-premium {
+        max-width: 280px;
+        padding: 5px;
+        /* Menos espacio de borde */
+    }
+
+    .danita-card-content {
+        padding: 15px 10px;
+        /* Menor padding interno */
+    }
+
+    .calligraphy-headline {
+        font-size: 1.1rem;
+        /* Achicamos los títulos para que entren en 140px */
+    }
+
+    .book-title.calligraphy-headline {
+        font-size: 1rem;
+    }
+
+    /* MÁS ESPACIO INTERNO UTIL: Reduciendo padding del libro */
+    .front,
+    .back {
+        padding: 6px;
+    }
+
+    /* Convertir dedicatoria larga a UNA columna en celulares */
+    .two-column-text {
+        column-count: 1;
+        font-size: 0.55rem;
+        height: 85%;
+    }
+
+    .book-heading {
+        font-size: 0.8rem;
+        margin-bottom: 3px;
+    }
+
+    .book-text {
+        font-size: 0.55rem;
+    }
+
+    /* Reducir aún más las fotos collages para que entren 3 en línea (evita wrap vertical) */
+    .photo-collage-3 .book-photo-frame {
+        width: 20px;
+        height: 20px;
+        border-width: 1px;
+    }
+
+    .photo-collage-3 .photo-emoji {
+        font-size: 0.6rem;
+    }
+
+    .photo-collage-6 {
+        gap: 2px;
+    }
+
+    .photo-collage-6 .book-photo-frame {
+        width: 18px;
+        height: 18px;
+        border-width: 1px;
+    }
+
+    .photo-collage-6 .photo-emoji {
+        font-size: 0.5rem;
+    }
+
+    /* Ajustar reproductor y botones */
+    .ipod-container {
+        transform: scale(0.85);
+        margin-top: -20px;
+    }
+
+    .nav-dots {
+        width: 90%;
+        justify-content: center;
+        bottom: 15px;
+        padding: 8px 15px;
+    }
+}
