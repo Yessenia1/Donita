@@ -78,36 +78,36 @@ const playlist = [
     {
         title: "GO!",
         artist: "Cortis",
-        cover: "14.jpg",
-        src: "GO!.mp3",
+        cover: "img/mp3/14.jpg",
+        src: "audio/GO!.mp3",
         message: "♪ «Por más crisis existenciales, cafés infinitos y risas de las que duelen. ¡Feliz vida!»"
     },
     {
         title: "What You Want",
         artist: "Cortis",
-        cover: "15.jpg",
-        src: "what you want.mp3",
+        cover: "img/mp3/15.jpg",
+        src: "audio/what you want.mp3",
         message: "♪ «Agradecida con la vida por tenerte cerca tantos años. ¡Que este sea tu mejor año!»"
     },
     {
         title: "FaSHion",
         artist: "Cortis",
-        cover: "145.jpg",
-        src: "FaSHion.mp3",
+        cover: "img/mp3/145.jpg",
+        src: "audio/FaSHion.mp3",
         message: "♪ «Deseo que este año tu cuenta bancaria suba tanto como tus notas y que el estrés sea lo único que te falte."
     },
     {
         title: "JoyRide",
         artist: "Cortis",
-        cover: "GO!.jpg",
-        src: "JoyRide.mp3",
+        cover: "img/mp3/GO!.jpg",
+        src: "audio/JoyRide.mp3",
         message: "♪ «Deseos de compartir mas salidas de las que nos merecemos esos cafes y salidas abuelitas»"
     },
     {
         title: "Lulluby",
         artist: "Cortis",
-        cover: "CORTIS!!.jpg",
-        src: "Lullaby.mp3",
+        cover: "img/mp3/CORTIS!!.jpg",
+        src: "audio/Lullaby.mp3",
         message: "♪ «¡Por muchos años más de locuras juntas, feliz cumpleaños!»"
     }
 ];
